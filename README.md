@@ -1,0 +1,1 @@
+# Get_StockHistory_JsonToText_Daily
