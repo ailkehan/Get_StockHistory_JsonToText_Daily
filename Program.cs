@@ -19,8 +19,8 @@ namespace JSONConversion
         async public static Task<string> Pr1(string sticker)
         {
             HttpClient client = new HttpClient();
-            var jsonresponseBody = await client.GetStringAsync("https://financialmodelingprep.com/api/v3/historical-price-full/" + sticker + "?&apikey=140d6d803e9a9362562c78702f94ada5");
-            File.WriteAllText(@"C:\Users\Atilla\source\repos\Data\" + sticker + ".json", jsonresponseBody);
+            var jsonresponseBody = await client.GetStringAsync("https://financialmodelingprep.com/api/v3/historical-price-full/" + sticker + "?&apikey=APIKEY");
+            File.WriteAllText(@"C:\Users\User1\source\repos\Data\" + sticker + ".json", jsonresponseBody);
             return jsonresponseBody;
         }
 
@@ -34,7 +34,7 @@ namespace JSONConversion
             Root myDeserializedClass = JsonSerializer.Deserialize<Root>(stream);
             string str;
 
-            StreamWriter sw = new StreamWriter(@"C:\Users\Atilla\source\repos\Data\" + sticker + ".txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\User1\source\repos\Data\" + sticker + ".txt");
             await sw.WriteLineAsync("<date>,<open>,<high>,<low>,<close>,<vol>");
 
             foreach (Historical historical in myDeserializedClass.historical)
